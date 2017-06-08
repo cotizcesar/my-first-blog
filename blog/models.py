@@ -14,4 +14,4 @@ class Post(models.Model):
         self.save() #Esta es la forma de guardar el Post.
     
     def __str__(self):
-        return self.title
+        return self.title #Con esto retorno el objeto como un String para poder leerlo mejor y no como un objeto.
