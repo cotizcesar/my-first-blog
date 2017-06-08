@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls), #Este es el link para la pagina de admin /admin/
-    url(r'', include('blog.urls')) #Link para / que internamente es para la carpeta blog(nuestro app) y el archivo urls.py
+    url(r'', include('blog.urls')), #Link para / que internamente es para la carpeta blog(nuestro app) y el archivo urls.py
 ]
