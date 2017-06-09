@@ -32,7 +32,10 @@
                         <a class="navbar-brand" href="{% url 'post_list' %}">Django Girls Blog</a>
                         </div>
                         <ul class="nav navbar-nav navbar-right">
+                            {% if user.is_authenticated %}
                             <li><a href="{% url 'post_new' %}">Nuevo Post</a></li>
+                            <li>{% block post_edit %}{% endblock %}</li>
+                            {% endif %}
                         </ul>
                         </div><!-- /.navbar-collapse -->
                     </div><!-- /.container-fluid -->
