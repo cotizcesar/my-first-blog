@@ -1,19 +1,17 @@
 {% extends 'blog/base.html' %}
+{% block title %}Django Girls blog - {{ post.title }}{% endblock %}
                         {% block content %}
-                            {% if post.published_date %}
-                            <div class="page-header">
-                                <h1>{{ post.title }} <small class="pull-right">Published: {{ post.published_date }}</small></h1>
+                        {% if post.published_date %}
+                        <div class="page-header">
+                            <h1>{{ post.title }} <small class="pull-right">Published: {{ post.published_date }}</small> <a class="btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span></a></h1>
+                        </div>
+                        <div class="panel panel-success">
+                            <div class="panel-body">
+                                {{ post.text|linebreaksbr }}
                             </div>
-                            <div class="panel panel-success">
-                                <div class="panel-body">
-                                    {{ post.text|linebreaksbr }}
-                                </div>
-                            </div>
-                            {% endif %}
+                        </div>
+                        {% endif %}
                         {% endblock %}
                         {% block sidebar %}
-                            Sidebar
+                        
                         {% endblock %}
-            {% block footer %}
-                Footer
-            {% endblock %}
